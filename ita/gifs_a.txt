@@ -1,0 +1,6 @@
+/shuttle/countdown/video/livevideo.gif
+/shuttle/countdown/count.gif
+/images/NASA-logosmall.gif
+/images/KSC-logosmall.gif
+/shuttle/countdown/count.gif
+/images/NASA-logosmall.gif
