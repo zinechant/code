@@ -17,7 +17,7 @@ TEST(BinarayIndexedTreeTest, RandomTest) {
     a[i] = rand_r(&seed) % M;
   }
 
-  BinarayIndexedTree<int> stree(std::vector<int>(a, a + N));
+  ::algorithm::BinarayIndexedTree<int> stree(std::vector<int>(a, a + N));
 
   for (int i = 0; i < M; i++) {
     int x = rand_r(&seed) % N;

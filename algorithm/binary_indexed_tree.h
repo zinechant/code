@@ -7,32 +7,34 @@
 
 #include <vector>
 
+namespace algorithm {
 template<class T> class BinarayIndexedTree {
-  std::vector<T> s;
+ private:
+  ::std::vector<T> s_;
 
  public:
-  explicit BinarayIndexedTree(std::vector<T> a) {
+  explicit BinarayIndexedTree(::std::vector<T> a) {
     int n = a.size() + 1;
-    s.resize(n);
+    s_.resize(n);
     for (int i = 0; i < n; i++) {
-      s[i] = 0;
+      s_[i] = 0;
     }
     for (int i = 0; i < n; i++) {
       add(i, a[i]);
     }
   }
   T sum(int i) {
-    T ans = 0;
+    T ans(0);
     while (i > 0) {
-      ans += s[i];
+      ans += s_[i];
       i -= lowbit(i);
     }
     return ans;
   }
   void add(int i, T v) {
     i++;
-    while (i < s.size()) {
-      s[i] += v;
+    while (i < s_.size()) {
+      s_[i] += v;
       i += lowbit(i);
     }
   }
@@ -42,5 +44,7 @@ template<class T> class BinarayIndexedTree {
     return x & -x;
   }
 };
+
+};  // namespace algorithm
 
 #endif  // ALGORITHM_BINARY_INDEXED_TREE_H_
